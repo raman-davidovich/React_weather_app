@@ -1,9 +1,7 @@
 import React from 'react';
 import s from './MonthStatistics.module.scss';
 
-interface Props {}
-
-function MonthStatistics(props: Props) {
+function MonthStatistics() {
   return (
     <div className={s.home}>Month statistics</div>
   );

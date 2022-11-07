@@ -1,9 +1,7 @@
 import React from 'react';
 import s from './Home.module.scss';
 
-interface Props {}
-
-function Home(props: Props) {
+function Home() {
   return (
     <div className={s.home}>Home</div>
   );
