@@ -19,8 +19,8 @@ function Header() {
       <div className={s.wrapper}>
         <div className={s.change_theme}>
           <GlobalSvgSelector id="change-theme" />
-          <Select options={options} />
         </div>
+        <Select options={options} />
       </div>
     </div>
   );
