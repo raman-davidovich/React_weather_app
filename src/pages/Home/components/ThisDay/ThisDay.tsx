@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './ThisDay.module.scss';
-import GlobalSvgSelector from '../../../../assets/images/icons/global/GlobalSvgSelector';
+import GlobalSvgSelector from '../../../../assets/icons/global/GlobalSvgSelector';
 
 function ThisDay() {
   return (
