@@ -18,12 +18,16 @@ function Header() {
   const colorStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: 'rgba(71, 147, 255, 0.2)',
+      backgroundColor: 0 ? '#4F4F4F4' : 'rgba(71, 147, 255, 0.2)',
       width: '194px',
       height: '37px',
       border: 'none',
       borderRadius: '10px',
       zIndex: 100,
+    }),
+    singleValue: (styles: any) => ({
+      ...styles,
+      color: 0 ? '#FFFFFF' : '#000000',
     }),
   };
 
