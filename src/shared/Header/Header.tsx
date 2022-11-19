@@ -1,24 +1,23 @@
 import React from 'react';
 import Select from 'react-select';
-import s from './Header.module.scss';
 import GlobalSvgSelector from '../../assets/icons/global/GlobalSvgSelector';
-
-type SelectOption = {
-  value: string,
-  label: string,
-}
+import { Theme } from '../../context/ThemeContext';
+import useTheme from '../../hooks/useTheme';
+import s from './Header.module.scss';
 
 function Header() {
-  const options: Array<SelectOption> = [
+  const theme = useTheme();
+  const options = [
     { value: 'city-1', label: 'Baranovichi' },
     { value: 'city-2', label: 'Minsk' },
     { value: 'city-3', label: 'New York' },
   ];
 
-  const colorStyles = {
+  const colourStyles = {
     control: (styles: any) => ({
       ...styles,
-      backgroundColor: 0 ? '#4F4F4F4' : 'rgba(71, 147, 255, 0.2)',
+      backgroundColor:
+        theme.theme === Theme.DARK ? '#4F4F4F' : 'rgba(71, 147, 255, 0.2)',
       width: '194px',
       height: '37px',
       border: 'none',
@@ -27,23 +26,35 @@ function Header() {
     }),
     singleValue: (styles: any) => ({
       ...styles,
-      color: 0 ? '#FFFFFF' : '#000000',
+      color: theme.theme === Theme.DARK ? '#fff' : '#000',
     }),
   };
+
+  function changeTheme() {
+    theme.changeTheme(theme.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
+  }
 
   return (
     <header className={s.header}>
       <div className={s.wrapper}>
-        <div className={s.logo}><GlobalSvgSelector id="header-logo" /></div>
+        <div className={s.logo}>
+          <GlobalSvgSelector id="header-logo" />
+        </div>
         <div className={s.title}>React weather</div>
       </div>
       <div className={s.wrapper}>
-        <div className={s.change_theme}>
+        <div
+          className={s.change_theme}
+          onClick={changeTheme}
+          onKeyDown={changeTheme}
+          role="button"
+          tabIndex={0}
+        >
           <GlobalSvgSelector id="change-theme" />
         </div>
         <Select
           defaultValue={options[0]}
-          styles={colorStyles}
+          styles={colourStyles}
           options={options}
         />
       </div>

@@ -3,12 +3,12 @@ import { Routes, Route } from 'react-router-dom';
 import MonthStatistics from './pages/MonthStatistics/MonthStatistics';
 import Home from './pages/Home/Home';
 import Header from './shared/Header/Header';
-import Popup from './shared/Popup/Popup';
+// import Popup from './shared/Popup/Popup';
 
 function App() {
   return (
     <div className="global-container">
-      <Popup />
+      {/* <Popup /> */}
       <div className="container">
         <Header />
         <Routes>
