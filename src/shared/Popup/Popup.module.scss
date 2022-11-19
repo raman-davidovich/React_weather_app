@@ -3,7 +3,8 @@
 .popup {
   position: absolute;
   top: 50%;
-  left: calc(50% - 325px);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1001;
   display: flex;
   align-items: center;
